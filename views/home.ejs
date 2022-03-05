@@ -1,0 +1,16 @@
+<%- include("partials/header"); %>
+
+<h1>Home</h1>
+<p> <%=headingcontent%> </p>
+
+<% composelogs.forEach(function(compose){ %>
+<h1><%= compose.composetext; %></h1> <!--instead of for loop-->
+
+<% const str = compose.composecontent; %>
+
+<p>
+<%= str.substring(0, 100) + "..." %><a href="/post/<%=compose.composetext;%>">Read More </a>
+</p>
+<% }); %>
+
+<%- include("partials/footer"); %>
